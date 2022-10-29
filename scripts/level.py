@@ -2,17 +2,17 @@ import os
 
 import pygame
 
-from scripts.button import Button
-from scripts.displaytext import Textbox
-from scripts.door import door
-from scripts.enemy import EnemyFly
-from scripts.kebab import Kebab
-from scripts.player import Player
-from scripts.settings import *
-from scripts.tile import Tile
-from scripts.window import Window
+from .button import Button
+from .displaytext import Textbox
+from .door import door
+from .enemy import EnemyFly
+from .kebab import Kebab
+from .player import Player
+from .settings import *
+from .tile import Tile
+from .window import Window
 
-pause_background = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "pausebg.png")), (1400, 800))
+pause_background = pygame.transform.scale(pygame.image.load(os.path.join("assets", "pausebg.png")), (1400, 800))
 
 
 class PauseMenu:
@@ -51,10 +51,10 @@ class Level:
         self.top = pygame.transform.scale(pygame.image.load('assets/tileset/top.png'), (t, t))
         self.bottom = pygame.transform.scale(pygame.image.load('assets/tileset/bottom.png'), (t, t))
 
-        self.robot = pygame.transform.scale(pygame.image.load('assets/debel.png'), (66, 66))
-        self.kebab = [pygame.transform.scale(pygame.image.load('assets/hp.png'), (36, 48)),
-                      pygame.transform.scale(pygame.image.load('assets/hp2.png'), (36, 48)),
-                      pygame.transform.scale(pygame.image.load('assets/hp3.png'), (36, 48))]
+        self.debel = pygame.transform.scale(pygame.image.load('assets/debel.png'), (66, 66))
+        self.kebab = [pygame.transform.scale(pygame.image.load('assets/hp.png'), (36*2, 48*2)),
+                      pygame.transform.scale(pygame.image.load('assets/hp2.png'), (36*2, 48*2)),
+                      pygame.transform.scale(pygame.image.load('assets/hp3.png'), (36*2, 48*2))]
         self.font = pygame.font.Font('assets/alagard.ttf', 45)
 
         self.kebab_pos = []
@@ -84,7 +84,7 @@ class Level:
         self.gravity = False
         self.stuck = False
 
-        self.pausebutton = pygame.image.load(os.path.join("Assets", "pausebutton.png"))
+        self.pausebutton = pygame.image.load(os.path.join("assets", "pausebutton.png"))
         self.pause_button = Button(700, 100, self.pausebutton, self.display_surface)
 
         self.paused = False
@@ -179,7 +179,7 @@ class Level:
                     self.door_obj = door((x, y - 16), self.door_img)
 
                 if cell == 'e':
-                    enemy = EnemyFly(self.robot, (x, y), self.display_surface, self.main_player.rect,
+                    enemy = EnemyFly(self.debel, (x, y), self.display_surface, self.main_player.rect,
                                      level['enemy_dist'], level['enemy_speed'])
                     self.enemies.append(enemy)
 
