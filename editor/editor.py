@@ -6,19 +6,19 @@ screen = pygame.display.set_mode((750, 400))
 
 class tiles:
     def __init__(self):
-        self.bottom_left = pygame.image.load("./assets/tileset/bottom-left.png")
-        self.bottom_right = pygame.image.load("./assets/tileset/bottom-right.png")
-        self.bottom = pygame.image.load("./assets/tileset/bottom.png")
-        self.left = pygame.image.load("./assets/tileset/left.png")
-        self.main = pygame.image.load("./assets/tileset/main.png")
-        self.right = pygame.image.load("./assets/tileset/right.png")
-        self.top_left = pygame.image.load("./assets/tileset/top-left.png")
-        self.top_right = pygame.image.load("./assets/tileset/top-right.png")
-        self.top = pygame.image.load("./assets/tileset/top.png")
-        self.debel = pygame.image.load("./assets/debel.png")
-        self.character = pygame.image.load("./assets/character/idle/1.png")
-        self.coin = pygame.image.load("./assets/kebab/kebab1.png")
-        self.door = pygame.image.load("./assets/door.png")
+        self.bottom_left = pygame.image.load("assets/tileset/bottom-left.png")
+        self.bottom_right = pygame.image.load("assets/tileset/bottom-right.png")
+        self.bottom = pygame.image.load("assets/tileset/bottom.png")
+        self.left = pygame.image.load("assets/tileset/left.png")
+        self.main = pygame.image.load("assets/tileset/main.png")
+        self.right = pygame.image.load("assets/tileset/right.png")
+        self.top_left = pygame.image.load("assets/tileset/top-left.png")
+        self.top_right = pygame.image.load("assets/tileset/top-right.png")
+        self.top = pygame.image.load("assets/tileset/top.png")
+        self.debel = pygame.image.load("assets/debel.png")
+        self.character = pygame.image.load("assets/character/idle/1.png")
+        self.coin = pygame.image.load("assets/kebab/kebab1.png")
+        self.door = pygame.image.load("assets/door.png")
     def drawmenu(self):
         screen.blit(pygame.transform.scale(self.top_left, (50, 50)), (0, 0))
         screen.blit(pygame.transform.scale(self.top, (50, 50)), (50, 0))
@@ -33,7 +33,7 @@ class tiles:
         screen.blit(pygame.transform.scale(self.character, (50, 50)), (50, 150))
         screen.blit(pygame.transform.scale(self.coin, (50, 50)), (0, 200))
         screen.blit(pygame.transform.scale(self.door, (50, 50)), (50, 200))
-        self.font = pygame.font.Font('./assets/alagard.ttf', 45)
+        self.font = pygame.font.Font('assets/alagard.ttf', 45)
         self.save = self.font.render("Save", True, (255, 255, 255))
         self.load = self.font.render("Load", True, (255, 255, 255))
         screen.blit(self.save, (0, 350))
@@ -119,11 +119,11 @@ class editor:
         pygame.display.flip()
         print(self.map)
     def save(self):
-        with open("./editor/level.txt", "w") as file:
+        with open("editor/level.txt", "w") as file:
             file.write(str(self.map))
             file.close()
     def load(self):
-        with open("./editor/level.txt", "r") as file:
+        with open("editor/level.txt", "r") as file:
             pygame.draw.rect(screen, (0, 0, 0), (160, 0, 590, 400), 0)
             self.map = file.read()
             self.map = self.map.replace(', ', ',')
