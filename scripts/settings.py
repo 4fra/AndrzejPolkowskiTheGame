@@ -1,3 +1,4 @@
+# left = L, right = R, top = T, bottom = B, main = X, topleft = W, topright = D, bottomleft = A, bottomright = S, insidetopleft = Q, insidetopright = E, insidebottomright = Y, insidebottomleft = U, grass = M, e = enemy, s = kebab, c = character, d = door
 level1 = {'level_map': [
     '                              ',
     '              e               ',
@@ -67,7 +68,3 @@ level3 = {'level_map': [
 tile_size = 48
 
 win_width, win_height = 1400, 800
-
-check = 1
-
-print(f'check: {check}')

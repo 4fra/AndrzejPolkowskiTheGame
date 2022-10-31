@@ -120,7 +120,7 @@ if __name__ == '__main__':
     resume = pygame.image.load(os.path.join("assets", "resume.png"))
     pause_background = pygame.transform.scale(pygame.image.load(os.path.join("assets", "pausebg.png")), (1400, 800))
 
-    background = pygame.transform.scale(pygame.image.load('assets/zslbackground.png'), (1400, 800))
+    background = pygame.transform.scale(pygame.image.load('assets/zslbackground.png'), (1920, 1080))
 
     player_img = pygame.transform.scale(pygame.image.load('assets/titleimg.png'), (390, 426))
 
