@@ -217,7 +217,7 @@ class Level:
                     player.rect.top = tile.rect.bottom
                     player.direction.y = 0.1
 
-        if player.rect.y >= win_height:
+        if player.rect.y >= win_height + 100:
             self.reset()
 
     def bulletCollision(self):
