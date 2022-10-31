@@ -39,33 +39,28 @@ class PlayerGame:
         for level in self.level3:
             level.run()
             if level.next_level:
-                timer = level.current_time
                 self.level3.clear()
-                end_loop(timer)
+                self.level4.append(Level(level4, screen))
         for level in self.level4:
             level.run()
             if level.next_level:
-                timer = level.current_time
                 self.level4.clear()
-                end_loop(timer)
+                self.level5.append(Level(level5, screen))
         for level in self.level5:
             level.run()
             if level.next_level:
-                timer = level.current_time
                 self.level5.clear()
-                end_loop(timer)
+                self.level6.append(Level(level6, screen))
         for level in self.level6:
             level.run()
             if level.next_level:
-                timer = level.current_time
                 self.level6.clear()
-                end_loop(timer)
+                self.level7.append(Level(level7, screen))
         for level in self.level7:
             level.run()
             if level.next_level:
-                timer = level.current_time
                 self.level7.clear()
-                end_loop(timer)
+                self.level8.append(Level(level8, screen))
         for level in self.level8:
             level.run()
             if level.next_level:
