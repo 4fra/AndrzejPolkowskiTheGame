@@ -17,6 +17,11 @@ class PlayerGame:
         self.level2 = []
         self.level2 = []
         self.level3 = []
+        self.level4 = []
+        self.level5 = []
+        self.level6 = []
+        self.level7 = []
+        self.level8 = []
 
     def run(self):
 
@@ -37,8 +42,37 @@ class PlayerGame:
                 timer = level.current_time
                 self.level3.clear()
                 end_loop(timer)
-
-
+        for level in self.level4:
+            level.run()
+            if level.next_level:
+                timer = level.current_time
+                self.level4.clear()
+                end_loop(timer)
+        for level in self.level5:
+            level.run()
+            if level.next_level:
+                timer = level.current_time
+                self.level5.clear()
+                end_loop(timer)
+        for level in self.level6:
+            level.run()
+            if level.next_level:
+                timer = level.current_time
+                self.level6.clear()
+                end_loop(timer)
+        for level in self.level7:
+            level.run()
+            if level.next_level:
+                timer = level.current_time
+                self.level7.clear()
+                end_loop(timer)
+        for level in self.level8:
+            level.run()
+            if level.next_level:
+                timer = level.current_time
+                self.level8.clear()
+                end_loop(timer)
+    
 class MainMenu:
 
     def __init__(self):

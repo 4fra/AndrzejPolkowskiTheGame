@@ -175,7 +175,7 @@ class editor:
                             self.symbol = "e"
                         elif event.pos[0] > 50 and event.pos[0] < 100 and event.pos[1] > 150 and event.pos[1] < 200:
                             self.selected = "character"
-                            self.symbol = "C"
+                            self.symbol = "P"
                         elif event.pos[0] > 100 and event.pos[0] < 150 and event.pos[1] > 150 and event.pos[1] < 200:
                             self.selected = "none"
                             self.symbol = " "
